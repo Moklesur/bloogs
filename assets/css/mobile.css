@@ -83,16 +83,16 @@
         padding: 15px;
     }
     .navbar-default .navbar-toggle{
-
+        border-color: #c09f5a;
     }
     .navbar-default .navbar-toggle .icon-bar{
-
+        background-color: #c09f5a;
     }
     .navbar-default .navbar-toggle:focus, .navbar-default .navbar-toggle:hover{
-
+        background-color: #c09f5a;
     }
     .navbar-default .navbar-toggle:focus .icon-bar, .navbar-default .navbar-toggle:hover .icon-bar{
-
+        background-color: #fff;
     }
     .woocommerce .product-fix .compare, .woocommerce .product-fix .yith-wcqv-button{
         visibility: visible;
@@ -104,22 +104,26 @@
     .footer-bottom ,.footer-bottom ul,.info{
         text-align: center;
     }
+    .info{
+        padding-bottom: 5px;
+    }
     .header-social{
         position: absolute;
-        top: 46px;
+        top: 51px;
         width: auto;
+        z-index: 1;
     }
     .header-social ul{
         text-align: left;
+    }
+    .primary-menu ul li:first-child a {
+        padding-left: 15px;
     }
 }
 /********************************************************
         ## Max Width 480px
 ********************************************************/
 @media only screen and (max-width:480px) {
-    .woocommerce ul.products li.product, .woocommerce-page ul.products li.product, .woocommerce-page[class*=columns-] ul.products li.product, .woocommerce[class*=columns-] ul.products li.product{
-        width: 100%;
-    }
 }
 /********************************************************
         Max Width 320px
