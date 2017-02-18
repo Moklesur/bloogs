@@ -10,7 +10,7 @@
  *
  * @param WP_Customize_Manager $wp_customize Theme Customizer object.
  */
-function themetim_customize_register( $wp_customize ) {
+function bloogs_customize_register( $wp_customize ) {
 	$wp_customize->get_setting( 'blogname' )->transport         = 'postMessage';
 	$wp_customize->get_setting( 'blogdescription' )->transport  = 'postMessage';
 	$wp_customize->get_setting( 'header_textcolor' )->transport = 'postMessage';
@@ -20,7 +20,7 @@ function themetim_customize_register( $wp_customize ) {
 	/**
 	 * Class bloogs Divider
 	 */
-	class themetim_divider extends WP_Customize_Control {
+	class bloogs_divider extends WP_Customize_Control {
 		public $type = 'divider';
 		public $label = '';
 		public function render_content() { ?>
@@ -49,7 +49,7 @@ function themetim_customize_register( $wp_customize ) {
 			'sanitize_callback' => 'esc_attr',
 		)
 	);
-	$wp_customize->add_control( new themetim_divider( $wp_customize, 'header_social', array(
+	$wp_customize->add_control( new bloogs_divider( $wp_customize, 'header_social', array(
 			'label' => __('Header Social', 'bloogs'),
 			'description'   => __('', 'bloogs'),
 			'section' => 'social_settings',
@@ -155,7 +155,7 @@ function themetim_customize_register( $wp_customize ) {
 			'sanitize_callback' => 'esc_attr',
 		)
 	);
-	$wp_customize->add_control( new themetim_divider( $wp_customize, 'footer_social', array(
+	$wp_customize->add_control( new bloogs_divider( $wp_customize, 'footer_social', array(
 			'label' => __('Footer Social', 'bloogs'),
 			'section' => 'social_settings',
 			'settings' => 'themetim_options[divider]'
@@ -164,7 +164,7 @@ function themetim_customize_register( $wp_customize ) {
 	/********************* Footer Social ************************/
 	$wp_customize->add_setting( 'social_footer_enable', array(
 		'default'           => '1',
-		'sanitize_callback' => 'themetim_sanitize_checkbox',
+		'sanitize_callback' => 'bloogs_sanitize_checkbox',
 	) );
 	$wp_customize->add_control( 'social_footer_enable', array(
 		'label' => __( 'Enable Footer Social', 'bloogs' ),
@@ -275,7 +275,7 @@ function themetim_customize_register( $wp_customize ) {
 			'sanitize_callback' => 'esc_attr',
 		)
 	);
-	$wp_customize->add_control( new themetim_divider( $wp_customize, 'header_logo', array(
+	$wp_customize->add_control( new bloogs_divider( $wp_customize, 'header_logo', array(
 			'label' => __('Logo', 'bloogs'),
 			'description'   => __('', 'bloogs'),
 			'section' => 'title_tagline',
@@ -311,7 +311,7 @@ function themetim_customize_register( $wp_customize ) {
 			'sanitize_callback' => 'esc_attr',
 		)
 	);
-	$wp_customize->add_control( new themetim_divider( $wp_customize, 'header_top', array(
+	$wp_customize->add_control( new bloogs_divider( $wp_customize, 'header_top', array(
 			'label' => __('Header Top', 'bloogs'),
 			'section' => 'title_tagline',
 			'description'   => __('', 'bloogs'),
@@ -321,7 +321,7 @@ function themetim_customize_register( $wp_customize ) {
 	/********************* Top Header ************************/
 	$wp_customize->add_setting( 'social_header_enable', array(
 		'default'           => '1',
-		'sanitize_callback' => 'themetim_sanitize_checkbox',
+		'sanitize_callback' => 'bloogs_sanitize_checkbox',
 	) );
 	$wp_customize->add_control( 'social_header_enable', array(
 		'label' => __( 'Enable Header Social', 'bloogs' ),
@@ -333,7 +333,7 @@ function themetim_customize_register( $wp_customize ) {
 
 	$wp_customize->add_setting( 'bottom_header_search', array(
 		'default'           => '1',
-		'sanitize_callback' => 'themetim_sanitize_checkbox',
+		'sanitize_callback' => 'bloogs_sanitize_checkbox',
 	) );
 	$wp_customize->add_control( 'bottom_header_search', array(
 		'label' => __( 'Enable Search', 'bloogs' ),
@@ -351,7 +351,7 @@ function themetim_customize_register( $wp_customize ) {
 			'sanitize_callback' => 'esc_attr',
 		)
 	);
-	$wp_customize->add_control( new themetim_divider( $wp_customize, 'header_favicon', array(
+	$wp_customize->add_control( new bloogs_divider( $wp_customize, 'header_favicon', array(
 			'label' => __('Favicon', 'bloogs'),
 			'section' => 'title_tagline',
 			'description'   => __('', 'bloogs'),
@@ -375,7 +375,7 @@ function themetim_customize_register( $wp_customize ) {
 			'sanitize_callback' => 'esc_attr',
 		)
 	);
-	$wp_customize->add_control( new themetim_divider( $wp_customize, 'footer_top', array(
+	$wp_customize->add_control( new bloogs_divider( $wp_customize, 'footer_top', array(
 			'label' => __('Top Footer', 'bloogs'),
 			'description'   => __('', 'bloogs'),
 			'section' => 'footer_settings',
@@ -385,7 +385,7 @@ function themetim_customize_register( $wp_customize ) {
 	/********************* Top Footer ************************/
 	$wp_customize->add_setting( 'social_footer_enable', array(
 		'default'           => '1',
-		'sanitize_callback' => 'themetim_sanitize_checkbox',
+		'sanitize_callback' => 'bloogs_sanitize_checkbox',
 	) );
 	$wp_customize->add_control( 'social_footer_enable', array(
 		'label' => __( 'Enable Footer Social', 'bloogs' ),
@@ -397,7 +397,7 @@ function themetim_customize_register( $wp_customize ) {
 
 	$wp_customize->add_setting( 'newsletter_footer_enable', array(
 		'default'           => '1',
-		'sanitize_callback' => 'themetim_sanitize_checkbox',
+		'sanitize_callback' => 'bloogs_sanitize_checkbox',
 	) );
 	$wp_customize->add_control( 'newsletter_footer_enable', array(
 		'label' => __( 'Enable Footer Newsletter', 'bloogs' ),
@@ -408,7 +408,7 @@ function themetim_customize_register( $wp_customize ) {
 	) );
 	$wp_customize->add_setting( 'top_footer_newsletter_title', array(
 		'default'           => 'Follow Us',
-		'sanitize_callback' => 'themetim_sanitize_text',
+		'sanitize_callback' => 'bloogs_sanitize_text',
 	) );
 	$wp_customize->add_control( 'top_footer_newsletter_title', array(
 		'label' => __( 'Heading', 'bloogs' ),
@@ -417,9 +417,20 @@ function themetim_customize_register( $wp_customize ) {
 		'settings' => 'top_footer_newsletter_title',
 		'description'   => __('', 'bloogs')
 	) );
+	$wp_customize->add_setting( 'top_footer_newsletter_text', array(
+		'default'           => 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s',
+		'sanitize_callback' => 'bloogs_sanitize_text',
+	) );
+	$wp_customize->add_control( 'top_footer_newsletter_text', array(
+		'label' => __( 'Description', 'bloogs' ),
+		'type' => 'textarea',
+		'section' => 'footer_settings',
+		'settings' => 'top_footer_newsletter_text',
+		'description'   => __('', 'bloogs')
+	) );
 	$wp_customize->add_setting( 'top_footer_newsletter_url', array(
 		'default'           => 'https://www.yourmailchimpurl.com',
-		'sanitize_callback' => 'themetim_sanitize_text',
+		'sanitize_callback' => 'bloogs_sanitize_text',
 	) );
 	$wp_customize->add_control( 'top_footer_newsletter_url', array(
 		'label' => __( 'Mail Chimp URL', 'bloogs' ),
@@ -431,7 +442,7 @@ function themetim_customize_register( $wp_customize ) {
 
 	$wp_customize->add_setting( 'middle_footer_text_enable', array(
 		'default'           => '1',
-		'sanitize_callback' => 'themetim_sanitize_checkbox',
+		'sanitize_callback' => 'bloogs_sanitize_checkbox',
 	) );
 	$wp_customize->add_control( 'middle_footer_text_enable', array(
 		'label' => __( 'Enable Description', 'bloogs' ),
@@ -442,43 +453,19 @@ function themetim_customize_register( $wp_customize ) {
 	) );
 
 	$wp_customize->add_setting( 'middle_footer_text_heading', array(
-		'default'           => 'Get In Touch',
-		'sanitize_callback' => 'themetim_sanitize_text',
+		'default'           => 'BLOOGS',
+		'sanitize_callback' => 'bloogs_sanitize_text',
 	) );
 	$wp_customize->add_control( 'middle_footer_text_heading', array(
-		'label' => __( 'Heading', 'bloogs' ),
+		'label' => __( 'Text', 'bloogs' ),
 		'type' => 'text',
 		'section' => 'footer_settings',
 		'settings' => 'middle_footer_text_heading',
 		'description'   => __('', 'bloogs')
 	) );
-	$wp_customize->add_setting( 'middle_footer_text', array(
-		'default'           => 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s.',
-		'sanitize_callback' => 'themetim_sanitize_text',
-	) );
-	$wp_customize->add_control( 'middle_footer_text', array(
-		'label' => __( 'Description', 'bloogs' ),
-		'type' => 'textarea',
-		'section' => 'footer_settings',
-		'settings' => 'middle_footer_text',
-		'description'   => __('', 'bloogs')
-	) );
-
-
-	$wp_customize->add_setting( 'middle_footer_nav_heading_1', array(
-		'default'           => 'Information',
-		'sanitize_callback' => 'themetim_sanitize_text',
-	) );
-	$wp_customize->add_control( 'middle_footer_nav_heading_1', array(
-		'label' => __( 'Heading', 'bloogs' ),
-		'type' => 'text',
-		'section' => 'footer_settings',
-		'settings' => 'middle_footer_nav_heading_1',
-		'description'   => __('', 'bloogs')
-	) );
 	$wp_customize->add_setting( 'middle_footer_nav_1_enable', array(
 		'default'           => '1',
-		'sanitize_callback' => 'themetim_sanitize_checkbox',
+		'sanitize_callback' => 'bloogs_sanitize_checkbox',
 	) );
 	$wp_customize->add_control( 'middle_footer_nav_1_enable', array(
 		'label' => __( 'Enable Nav 1', 'bloogs' ),
@@ -497,7 +484,7 @@ function themetim_customize_register( $wp_customize ) {
 			'sanitize_callback' => 'esc_attr',
 		)
 	);
-	$wp_customize->add_control( new themetim_divider( $wp_customize, 'footer_bottom', array(
+	$wp_customize->add_control( new bloogs_divider( $wp_customize, 'footer_bottom', array(
 			'label' => __('Bottom Footer', 'bloogs'),
 			'description'   => __('', 'bloogs'),
 			'section' => 'footer_settings',
@@ -507,7 +494,7 @@ function themetim_customize_register( $wp_customize ) {
 	/********************* Bottom Footer ************************/
 	$wp_customize->add_setting( 'bottom_footer_copyright_enable', array(
 		'default'           => '1',
-		'sanitize_callback' => 'themetim_sanitize_checkbox',
+		'sanitize_callback' => 'bloogs_sanitize_checkbox',
 	) );
 	$wp_customize->add_control( 'bottom_footer_copyright_enable', array(
 		'label' => __( 'Enable Copyright', 'bloogs' ),
@@ -518,7 +505,7 @@ function themetim_customize_register( $wp_customize ) {
 	) );
 	$wp_customize->add_setting( 'bottom_footer_copyright', array(
 		'default'           => 'Proudly powered by WordPress',
-		'sanitize_callback' => 'themetim_sanitize_text',
+		'sanitize_callback' => 'bloogs_sanitize_text',
 	) );
 	$wp_customize->add_control( 'bottom_footer_copyright', array(
 		'label' => __( 'Text', 'bloogs' ),
@@ -544,7 +531,7 @@ function themetim_customize_register( $wp_customize ) {
 			'sanitize_callback' => 'esc_attr',
 		)
 	);
-	$wp_customize->add_control( new themetim_divider( $wp_customize, 'blog', array(
+	$wp_customize->add_control( new bloogs_divider( $wp_customize, 'blog', array(
 			'label' => __('Blog Section', 'bloogs'),
 			'description'   => __('', 'bloogs'),
 			'section' => 'blog_settings',
@@ -553,7 +540,7 @@ function themetim_customize_register( $wp_customize ) {
 	);
 	$wp_customize->add_setting( 'blog_sidebar_enable', array(
 		'default'           => '1',
-		'sanitize_callback' => 'themetim_sanitize_checkbox',
+		'sanitize_callback' => 'bloogs_sanitize_checkbox',
 	) );
 	$wp_customize->add_control( 'blog_sidebar_enable', array(
 		'label' => __( 'Enable Sidebar', 'bloogs' ),
@@ -563,7 +550,7 @@ function themetim_customize_register( $wp_customize ) {
 		'settings' => 'blog_sidebar_enable'
 	) );
 	$wp_customize->add_setting( 'excerpt_lenght', array(
-		'default'           => '60',
+		'default'           => '18',
 		'sanitize_callback' => 'absint',
 	) );
 	$wp_customize->add_control( 'excerpt_lenght', array(
@@ -580,7 +567,7 @@ function themetim_customize_register( $wp_customize ) {
 	) );
 	$wp_customize->add_setting( 'blog_social_sharing_enable', array(
 		'default'           => '1',
-		'sanitize_callback' => 'themetim_sanitize_checkbox',
+		'sanitize_callback' => 'bloogs_sanitize_checkbox',
 	) );
 	$wp_customize->add_control( 'blog_social_sharing_enable', array(
 		'label' => __( 'Enable Social Sharing', 'bloogs' ),
@@ -607,7 +594,7 @@ function themetim_customize_register( $wp_customize ) {
 			'sanitize_callback' => 'esc_attr',
 		)
 	);
-	$wp_customize->add_control( new themetim_divider( $wp_customize, 'shop', array(
+	$wp_customize->add_control( new bloogs_divider( $wp_customize, 'shop', array(
 			'label' => __('Widget', 'bloogs'),
 			'description'   => __('', 'bloogs'),
 			'section' => 'shop_settings',
@@ -617,7 +604,7 @@ function themetim_customize_register( $wp_customize ) {
 
 	$wp_customize->add_setting( 'shop_sidebar_enable', array(
 		'default'           => '1',
-		'sanitize_callback' => 'themetim_sanitize_checkbox',
+		'sanitize_callback' => 'bloogs_sanitize_checkbox',
 	) );
 	$wp_customize->add_control( 'shop_sidebar_enable', array(
 		'label' => __( 'Enable Widget', 'bloogs' ),
@@ -691,7 +678,7 @@ function themetim_customize_register( $wp_customize ) {
 	$wp_customize->add_setting(
 		'link_hover_color',
 		array(
-			'default'           => '#f93759',
+			'default'           => '#c09f5a',
 			'sanitize_callback' => 'sanitize_hex_color',
 		)
 	);
@@ -716,7 +703,7 @@ function themetim_customize_register( $wp_customize ) {
 			'sanitize_callback' => 'esc_attr',
 		)
 	);
-	$wp_customize->add_control( new themetim_divider( $wp_customize, 'header_color', array(
+	$wp_customize->add_control( new bloogs_divider( $wp_customize, 'header_color', array(
 			'label' => __('Header Color', 'bloogs'),
 			'description'   => __('', 'bloogs'),
 			'section' => 'colors',
@@ -772,7 +759,7 @@ function themetim_customize_register( $wp_customize ) {
 			'sanitize_callback' => 'esc_attr',
 		)
 	);
-	$wp_customize->add_control( new themetim_divider( $wp_customize, 'footer_color', array(
+	$wp_customize->add_control( new bloogs_divider( $wp_customize, 'footer_color', array(
 			'label' => __('Footer Color', 'bloogs'),
 			'description'   => __('', 'bloogs'),
 			'section' => 'colors',
@@ -783,7 +770,7 @@ function themetim_customize_register( $wp_customize ) {
 	$wp_customize->add_setting(
 		'footer_bg_color',
 		array(
-			'default'           => '#ddd',
+			'default'           => '#fff',
 			'sanitize_callback' => 'sanitize_hex_color',
 		)
 	);
@@ -827,7 +814,7 @@ function themetim_customize_register( $wp_customize ) {
 			'sanitize_callback' => 'esc_attr',
 		)
 	);
-	$wp_customize->add_control( new themetim_divider( $wp_customize, 'default', array(
+	$wp_customize->add_control( new bloogs_divider( $wp_customize, 'default', array(
 			'label' => __('Default Button', 'bloogs'),
 			'description'   => __('', 'bloogs'),
 			'section' => 'colors',
@@ -960,7 +947,7 @@ function themetim_customize_register( $wp_customize ) {
 			'sanitize_callback' => 'esc_attr',
 		)
 	);
-	$wp_customize->add_control( new themetim_divider( $wp_customize, 'primary', array(
+	$wp_customize->add_control( new bloogs_divider( $wp_customize, 'primary', array(
 			'label' => __('Primary Button', 'bloogs'),
 			'description'   => __('', 'bloogs'),
 			'section' => 'colors',
@@ -1091,7 +1078,7 @@ function themetim_customize_register( $wp_customize ) {
 			'sanitize_callback' => 'esc_attr',
 		)
 	);
-	$wp_customize->add_control( new themetim_divider( $wp_customize, 'success', array(
+	$wp_customize->add_control( new bloogs_divider( $wp_customize, 'success', array(
 			'label' => __('Primary Button', 'bloogs'),
 			'description'   => __('', 'bloogs'),
 			'section' => 'colors',
@@ -1223,7 +1210,7 @@ function themetim_customize_register( $wp_customize ) {
 			'sanitize_callback' => 'esc_attr',
 		)
 	);
-	$wp_customize->add_control( new themetim_divider( $wp_customize, 'extracolor', array(
+	$wp_customize->add_control( new bloogs_divider( $wp_customize, 'extracolor', array(
 			'label' => __('Extra Color', 'bloogs'),
 			'description'   => __('', 'bloogs'),
 			'section' => 'colors',
@@ -1277,7 +1264,7 @@ function themetim_customize_register( $wp_customize ) {
 			'sanitize_callback' => 'esc_attr',
 		)
 	);
-	$wp_customize->add_control( new themetim_divider( $wp_customize, 'extrabg', array(
+	$wp_customize->add_control( new bloogs_divider( $wp_customize, 'extrabg', array(
 			'label' => __('Extra BG', 'bloogs'),
 			'description'   => __('', 'bloogs'),
 			'section' => 'colors',
@@ -1335,8 +1322,8 @@ function themetim_customize_register( $wp_customize ) {
 	$wp_customize->add_setting(
 		'body_font_family',
 		array(
-			'default' => 'Source+Sans+Pro',
-			'sanitize_callback'     => 'themetim_sanitize_choices',
+			'default' => 'PT+Sans',
+			'sanitize_callback'     => 'bloogs_sanitize_choices',
 		)
 	);
 	$wp_customize->add_control(
@@ -1396,8 +1383,8 @@ function themetim_customize_register( $wp_customize ) {
 		'description'   => __('', 'bloogs')
 	) );
 	$wp_customize->add_setting('heading_font_family', array(
-		'default'        => 'Source+Sans+Pro',
-		'sanitize_callback'     => 'themetim_sanitize_choices',
+		'default'        => 'PT+Sans',
+		'sanitize_callback'     => 'bloogs_sanitize_choices',
 	));
 	$wp_customize->add_control( 'heading_font_family', array(
 		'label'   => __('Heading Font', 'bloogs'),
@@ -1442,14 +1429,14 @@ function themetim_customize_register( $wp_customize ) {
 		'description'   => __('', 'bloogs')
 	) );
 }
-add_action( 'customize_register', 'themetim_customize_register' );
+add_action( 'customize_register', 'bloogs_customize_register' );
 
 /**
  * Choices ( Fonts Family )
  * @param $input
  * @return string
  */
-function themetim_sanitize_choices( $input ) {
+function bloogs_sanitize_choices( $input ) {
 	$valid = array(
 		'Poppins' => 'Poppins',
 		'Source+Sans+Pro' => 'Source Sans Pro',
@@ -1489,7 +1476,7 @@ function themetim_sanitize_choices( $input ) {
  * @return string
  */
 
-function themetim_sanitize_text( $input ) {
+function bloogs_sanitize_text( $input ) {
 	return wp_kses_post( force_balance_tags( $input ) );
 }
 
@@ -1498,7 +1485,7 @@ function themetim_sanitize_text( $input ) {
  * @param $input
  * @return int|string
  */
-function themetim_sanitize_checkbox( $input ) {
+function bloogs_sanitize_checkbox( $input ) {
 	if ( $input == 1 ) {
 		return 1;
 	} else {
@@ -1509,9 +1496,9 @@ function themetim_sanitize_checkbox( $input ) {
 /**
  * Binds JS handlers to make Theme Customizer preview reload changes asynchronously.
  */
-function themetim_customize_preview_js() {
-	wp_enqueue_script( 'themetim_customizer', get_template_directory_uri() . '/js/customizer.js', array( 'customize-preview' ), '20151215', true );
+function bloogs_customize_preview_js() {
+	wp_enqueue_script( 'bloogs_customizer', get_template_directory_uri() . '/js/customizer.js', array( 'customize-preview' ), '20151215', true );
 }
-add_action( 'customize_preview_init', 'themetim_customize_preview_js' );
+add_action( 'customize_preview_init', 'bloogs_customize_preview_js' );
 
 

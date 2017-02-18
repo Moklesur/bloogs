@@ -1,0 +1,1 @@
+<h2 class="entry-title margin-null text-capitalize text-center"><?php the_content(); ?></h2>

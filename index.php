@@ -14,14 +14,63 @@
 
 get_header(); ?>
 
-	<main class="home-page woocommerce">
-		<section class="banner">
-			<div class="container">
+	<main class="home-page">
+		<section>
+			<!--------------- Blog Slider ---------------->
+			<div class="blog-slider">
+				<div class="container">
+					<div class="row">
+						<div class="col-md-12 col-sm-12 col-xs-12 text-center">
+							<div id="blog-slider" class="carousel slide" data-ride="carousel">
+								<!-- Wrapper for slides -->
+								<div class="carousel-inner" role="listbox">
+									<?php
+									$home_slider_blog = new WP_Query( array(
+										'post_status'         => 'publish',
+										'posts_per_page'	  => 4
+									) );
+									if ($home_slider_blog->have_posts()) :
+										while ( $home_slider_blog->have_posts() ) : $home_slider_blog->the_post(); ?>
+											<div class="item">
+												<?php the_title( sprintf( '<h3 class="entry-title text-capitalize margin-null"><a href="%s">', esc_url( get_permalink() ) ), '</a></h3>' );
+												if ( 'post' === get_post_type() ) : ?>
+													<div class="entry-meta margin-bottom-20 margin-top-10">
+														<?php themetim_posted_on(); ?>
+													</div><!-- .entry-meta -->
+												<?php endif; ?>
+												<div class="entry-summary"><?php the_excerpt(); ?></div>
+												<?php if(!is_single()) : ?>
+													<div class="margin-top-20">
+														<a href="<?php the_permalink(); ?>" class="read-more">Read More</a>
+													</div>
+												<?php endif;  ?>
+											</div>
+										<?php endwhile; wp_reset_postdata(); endif; ?>
+								</div>
+
+								<!-- Controls -->
+								<div class="blog-slider-arrow">
+									<a href="#blog-slider" role="button" data-slide="prev"><i class="fa fa-angle-left"></i></a>
+									<a href="#blog-slider" role="button" data-slide="next"><i class="fa fa-angle-right"></i></a>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<script>
+				jQuery(document).ready(function () {
+					if(jQuery('.blog-slider').length){
+						jQuery('.blog-slider').find('.item').first().addClass('active');
+					}
+				});
+			</script>
+			<div class="container ">
 				<div class="row">
 					<?php if (get_theme_mod('blog_sidebar_enable','1') ) : ?>
-					<div class="col-md-9 col-sm-8 col-xs-12 padding-gap-1 padding-gap-4">
+					<div class="col-md-9 col-sm-12 col-xs-12 padding-gap-1 padding-gap-4 padding-null">
 						<?php else: ?>
-						<div class="col-md-12 col-sm-12 col-xs-12 padding-gap-1 padding-gap-4">
+						<div class="col-md-12 col-sm-12 col-xs-12 padding-gap-1 padding-gap-4 padding-null">
 							<?php endif; ?>
 							<?php
 							if ( have_posts() ) :
@@ -43,11 +92,14 @@ get_header(); ?>
 									get_template_part( 'template-parts/content', get_post_format() );
 
 								endwhile;
-								if ( class_exists( 'WooCommerce' ) ) :
-									woocommerce_pagination();
-								else:
-									the_posts_navigation();
-								endif;
+								?><div class="pagination-wrap col-md-12 col-sm-12 col-xs-12"><?php
+								the_posts_pagination( array(
+									'screen_reader_text' => ' ',
+									'mid_size' => 5,
+									'prev_text' => __( '<i class="fa fa-angle-left"></i>', 'bloogs' ),
+									'next_text' => __( '<i class="fa fa-angle-right"></i>', 'bloogs' ),
+								) );
+								?></div><?php
 							else :
 
 								get_template_part( 'template-parts/content', 'none' );

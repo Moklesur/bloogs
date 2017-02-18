@@ -7,7 +7,7 @@
  * @package bloogs
  */
 
-if ( ! function_exists( 'boka_setup' ) ) :
+if ( ! function_exists( 'bloogs_setup' ) ) :
 /**
  * Sets up theme defaults and registers support for various WordPress features.
  *
@@ -15,7 +15,7 @@ if ( ! function_exists( 'boka_setup' ) ) :
  * runs before the init hook. The init hook is too late for some features, such
  * as indicating support for post thumbnails.
  */
-function boka_setup() {
+function bloogs_setup() {
 	/*
 	 * Make theme available for translation.
 	 * Translations can be filed in the /languages/ directory.
@@ -66,20 +66,21 @@ function boka_setup() {
 	 */
 	add_theme_support( 'post-formats', array(
 		'aside',
-		'image',
 		'video',
 		'quote',
 		'link',
+	    'gallery',
+	    'audio'
 	) );
 
 	// Set up the WordPress core custom background feature.
-	add_theme_support( 'custom-background', apply_filters( 'themetim_custom_background_args', array(
+	add_theme_support( 'custom-background', apply_filters( 'bloogs_custom_background_args', array(
 		'default-color' => '000',
 		'default-image' => '',
 	) ) );
 }
 endif;
-add_action( 'after_setup_theme', 'boka_setup' );
+add_action( 'after_setup_theme', 'bloogs_setup' );
 
 /**
  * Set the content width in pixels, based on the theme's design and stylesheet.
@@ -88,10 +89,10 @@ add_action( 'after_setup_theme', 'boka_setup' );
  *
  * @global int $content_width
  */
-function boka_content_width() {
-	$GLOBALS['content_width'] = apply_filters( 'boka_content_width', 1170 );
+function bloogs_content_width() {
+	$GLOBALS['content_width'] = apply_filters( 'bloogs_content_width', 1170 );
 }
-add_action( 'after_setup_theme', 'boka_content_width', 0 );
+add_action( 'after_setup_theme', 'bloogs_content_width', 0 );
 
 /**
  * Register widget area.
@@ -117,15 +118,6 @@ function bloogs_widgets_init() {
 		'before_title'  => '<h4 class="widget-title">',
 		'after_title'   => '</h4>',
 	) );
-	register_sidebar( array(
-		'name'          => esc_html__( 'Shop & Product Page', 'bloogs' ),
-		'id'            => 'shop-product',
-		'description'   => esc_html__( 'Widget For Shop & Product Pages', 'bloogs' ),
-		'before_widget' => '<section id="%1$s" class="widget bloogs-widget %2$s shop-widget">',
-		'after_widget'  => '</section>',
-		'before_title'  => '<h4 class="widget-title">',
-		'after_title'   => '</h4>',
-	) );
 }
 add_action( 'widgets_init', 'bloogs_widgets_init' );
 
@@ -133,8 +125,8 @@ add_action( 'widgets_init', 'bloogs_widgets_init' );
  * Enqueue scripts and styles.
  */
 function bloogs_scripts() {
-	wp_enqueue_style( 'bloogs-body-fonts', '//fonts.googleapis.com/css?family=' . esc_attr(get_theme_mod('body_font_family','Source+Sans+Pro').":".get_theme_mod('body_font_weight','400')) );
-	wp_enqueue_style( 'bloogs-heading-fonts', '//fonts.googleapis.com/css?family=' . esc_attr(get_theme_mod('heading_font_family','Source+Sans+Pro').":".get_theme_mod('heading_font_weight','700')) );
+	wp_enqueue_style( 'bloogs-body-fonts', '//fonts.googleapis.com/css?family=' . esc_attr(get_theme_mod('body_font_family','PT+Sans').":".get_theme_mod('body_font_weight','400')) );
+	wp_enqueue_style( 'bloogs-heading-fonts', '//fonts.googleapis.com/css?family=' . esc_attr(get_theme_mod('heading_font_family','PT+Sans').":".get_theme_mod('heading_font_weight','700')) );
 	wp_enqueue_style( 'bloogs-animate', get_template_directory_uri() . '/assets/css/animate.min.css', array(), '3.5.1' );
 	wp_enqueue_style( 'bloogs-font-awesome', get_template_directory_uri() . '/assets/css/font-awesome.min.css', array(), '4.7.0' );
 	wp_enqueue_style( 'bloogs-animsition', get_template_directory_uri() . '/assets/css/animsition.min.css', array(), '4.0.2' );
@@ -186,8 +178,8 @@ require get_template_directory() . '/inc/typography.php';
 /**
  * woocommerce support
  */
-add_action( 'after_setup_theme', 'boka_woocommerce_support' );
-function boka_woocommerce_support() {
+add_action( 'after_setup_theme', 'bloogs_woocommerce_support' );
+function bloogs_woocommerce_support() {
 	add_theme_support( 'woocommerce' );
 }
 
@@ -208,19 +200,19 @@ require get_template_directory() . '/inc/theme-functions.php';
 /**
  * bloogs the excerpt length
  */
-function boka_excerpt_length( $excerpt_length ) {
-	$excerpt = get_theme_mod('excerpt_lenght', '60');
+function bloogs_excerpt_length( $excerpt_length ) {
+	$excerpt = get_theme_mod('excerpt_lenght', '18');
 	return $excerpt;
 }
-add_filter( 'excerpt_length', 'boka_excerpt_length', 999 );
+add_filter( 'excerpt_length', 'bloogs_excerpt_length', 999 );
 
 /**
  *TGM Plugin activation.
  */
 require_once dirname( __FILE__ ) . '/inc/class-tgm-plugin-activation.php';
 
-add_action( 'tgmpa_register', 'boka_active_plugins' );
-function boka_active_plugins() {
+add_action( 'tgmpa_register', 'bloogs_active_plugins' );
+function bloogs_active_plugins() {
 	$plugins = array(
 		array(
 			'name'      => 'Contact Form 7',

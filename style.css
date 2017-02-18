@@ -16,6 +16,7 @@ Tags: left-sidebar, right-sidebar, custom-background, custom-colors, custom-menu
 ********************************************************/
 body{
 	font-weight: 400;
+	background: #f5f5f5;
 }
 a,.btn,input,button,.woocommerce .product-fix .compare,.woocommerce .product-fix .yith-wcqv-button,.woocommerce ul.products li.product .thumbs,.team-image::after,.team-social,.pricing-list{
 	-webkit-transition: all .3s ease-in-out;
@@ -85,12 +86,13 @@ img{
 	max-width: 100%;
 }
 .breadcrumb-wrap{
-	border-top: 1px solid #f9f9f9;
-	border-bottom: 1px solid #f9f9f9;
 	padding: 9px 0;
 	text-transform: capitalize;
-	letter-spacing: 1px;
-	font-size: 12px;
+	background: #c09f5a;
+	color: #fff;
+}
+.breadcrumb a{
+	color: #fff;
 }
 .breadcrumb>li+li:before {
 	padding: 0 10px;
@@ -155,7 +157,7 @@ img{
 .overflow,.woocommerce ul.products li.product .price{
 	overflow: hidden;
 }
-.full-width,.footer-top li a,.woocommerce .related .products .product-fix,.blog-article .calendar_wrap,.woocommerce-Reviews input,.wpcf7 label, .wpcf7 input, .wpcf7 select, .wpcf7 textarea,.wpcf7-form-control-wrap,.woocommerce .product-fix a.compare:before,.woocommerce .product-fix a.yith-wcqv-button:before,.widget-area .search-form label,.widget-area .search-form .search-field,.reply,.product-fix .product-hover,.product-fix .product-image .background-overlay,.woocommerce div.product form.cart .variations td,.woocommerce div.product form.cart .variations td.label,.woocommerce div.product form.cart .variations select,.sku_wrapper,.posted_in{
+.full-width,.footer-top li a,.woocommerce .related .products .product-fix,.blog-article .calendar_wrap,.woocommerce-Reviews input,.wpcf7 label, .wpcf7 input, .wpcf7 select, .wpcf7 textarea,.wpcf7-form-control-wrap,.woocommerce .product-fix a.compare:before,.woocommerce .product-fix a.yith-wcqv-button:before,.widget-area .search-form label,.widget-area .search-form .search-field,.reply,.product-fix .product-hover,.product-fix .product-image .background-overlay,.woocommerce div.product form.cart .variations td,.woocommerce div.product form.cart .variations td.label,.woocommerce div.product form.cart .variations select,.sku_wrapper,.posted_in,iframe,.pagination-wrap .pagination{
 	width: 100%;
 }
 .position-relative{
@@ -163,6 +165,10 @@ img{
 }
 .entry-footer{
 	background: transparent !important;
+}
+.format-video p{
+	margin-bottom: 0;
+	line-height: inherit;
 }
 /********************************************************
     ## Header
@@ -173,14 +179,22 @@ img{
 .header-social ul{
 	margin-bottom: 0;
 }
+.header-social li:last-child{
+	padding-right: 0;
+}
 .header-social a{
-	padding: 9px 5px;
+	padding: 9px 3px;
+}
+.header-social a:hover{
+	color: #777;
 }
 .header-top{
-	padding: 25px 0;
+	background: #212121;
+	color: #777;
+	padding: 5px 0;
 }
 .header-bottom{
-	background: #fafafa;
+	padding: 40px 0;
 }
 .header-bottom .navbar-default{
 	margin-bottom: 0;
@@ -196,24 +210,59 @@ img{
 	box-shadow: none;
 	border: 0;
 	padding: 11px 15px;
-	width: 320px;
 	height: inherit;
+	background: transparent;
+	color: #fff;
 }
 .header-search .btn{
 	position: absolute;
 	top: 4px;
-	right: 19px
+	right: 8px;
+	color: #777;
+	background: transparent;
+	outline: none;
+}
+.header-search .btn:hover,.header-search .btn:focus{
+	outline: none;
+}
+.top{
+	border-bottom: 1px solid #333;
 }
 /********************************************************
     ## Menu, Slider
 ********************************************************/
 .primary-menu{
-	padding: 5px 0;
+	padding: 0;
+	background: none;
+	border: 0;
+	margin: 0;
 }
 .primary-menu ul li a{
-	padding: 15px;
-	font-size: 16px;
+	padding: 15px 25px;
 	text-transform: capitalize;
+}
+.primary-menu .navbar-nav>li{
+	position: relative;
+}
+.primary-menu .navbar-nav>li>a{
+	color: #fff;
+	outline: none;
+}
+.primary-menu .navbar-nav>li:last-child>a::after{
+	display: none;
+}
+.primary-menu .navbar-nav>li>a::after{
+	content: '';
+	position: absolute;
+	right: 0;
+	top: 37%;
+	height: 15px;
+	width: 1px;
+	background: #555;
+	transform: rotate(20deg);
+	-webkit-transform: rotate(20deg) ;
+	-moz-transform: rotate(20deg) ;
+	-ms-transform: rotate(20deg) ;
 }
 .primary-menu ul li:first-child a{
 	padding-left: 0;
@@ -283,6 +332,10 @@ img{
 .slider-button,.slider-details{
 	margin-top: 20px;
 }
+.info p{
+	margin-bottom: 0;
+	margin-top: 5px;
+}
 /********************************************************
     ## Home
 ********************************************************/
@@ -330,7 +383,7 @@ img{
 	color: #fff;
 }
 .service-url{
-	border-bottom: 1px solid #f93759;
+	border-bottom: 1px solid #c09f5a;
 	font-weight: 700;
 	margin-top: 10px;
 	display: inline-block;
@@ -422,6 +475,70 @@ img{
 /********************************************************
     ## Blog
 ********************************************************/
+.tagcloud>a{
+	font-size: 14px !important;
+	display: inline-block;
+	border: 1px solid;
+	padding: 4px 10px;
+	margin-bottom: 10px;
+	text-transform: capitalize;
+	margin-right: 5px;
+}
+.read-more{
+	border-bottom: 1px solid #c09f5a;
+}
+.blog-slider-arrow a:hover{
+	color: #000;
+}
+.blog-slider-arrow a{
+	color: #c09f5a; 
+	display: inline-block;
+	border: 1px solid;
+	padding: 7px 15px;
+	margin: 30px 6px 0;
+}
+.blog-slider{
+	background-image: url("assets/images/slider.jpg");
+	background-repeat: no-repeat;
+	background-position: center;
+	height: 700px;
+}
+.blog-slider .container{
+	max-width: 850px;
+}
+.blog-slider #blog-slider{
+	margin-top: 130px;
+}
+.blog-slider #blog-slider{
+	background: rgba(255,255,255,.9);
+	padding: 100px;
+}
+.article-post,.comments-wrap,.pagination-wrap .pagination{
+	background: #fff;
+	padding: 30px;
+}
+.pagination-wrap h2{
+	display: none;
+}
+.pagination-wrap .pagination a, .pagination-wrap .pagination span {
+	color: #c09f5a;
+	display: inline-block;
+	padding: 4px 12px;
+	border: 2px solid;
+	margin: 0 2px;
+	text-align: center;
+}
+.pagination-wrap .pagination a:hover{
+	color: #000;
+}
+.pagination-wrap .pagination span{
+	opacity: .3;
+	color: #000;
+}
+.pagination-wrap .pagination{
+	text-align: center;
+	border-radius: 0;
+}
 .widget-area ul{
 	padding: 0;
 	list-style: none;
@@ -429,26 +546,18 @@ img{
 .widget-area ul li{
 	padding-bottom: 10px;
 }
-.widget-area ul li:last-child{
-	padding-bottom: 0;
-}
 .widget-area section{
-	padding: 15px;
+	background: #fff;
+	padding: 15px 30px;
 	margin-bottom: 30px;
 }
 .widget-area section .widget-title::after{
 	content: '';
 	width: 35px;
-	border: 2px solid #f93759;
+	border: 2px solid #c09f5a;
 	display: block;
 	position: relative;
 	top: 12px;
-}
-.widget-area section:first-child{
-	padding-top: 0;
-}
-.widget-area section:first-child .widget-title{
-	margin-top: 0;
 }
 .widget-area section .widget-title{
 	border-bottom: 1px solid #ddd;
@@ -503,6 +612,8 @@ img{
 }
 .posts-navigation{
 	text-align: center;
+	width: 100%;
+	overflow: hidden;
 }
 .posts-navigation a{
 	border: 1px solid;
@@ -626,41 +737,54 @@ img{
     ## Footer
 ********************************************************/
 .footer-social a{
-	padding: 5px;
+	padding: 6px 10px;
+	margin-top: 4px;
 }
-.footer-social li:last-child a,.footer-social li:last-child {
+.footer-social li:last-child {
 	padding-right: 0;
 }
 .footer-top{
-	padding-bottom: 40px;
+	padding-bottom: 80px;
+	padding-top: 60px;
 }
-.footer-top h4{
-	margin-bottom: 30px;
-	margin-top: 40px;
+.footer-top .container{
+	max-width: 550px;
 }
-.footer-menu li:first-child a{
-	padding-top: 0;
+.footer-middle{
+	background: #f5f5f5;
+	padding: 40px 0;
 }
 .footer-menu li a{
-	padding: 5px 0;
+	padding: 10px 5px;
+	display: inline-block;
+}
+.newsletter h2 span::after {
+	content: '';
+	width: 45px;
+	border: 1px solid;
+	display: block;
+	margin: 15px auto 20px;
+}
+.newsletter h2 {
+	position: relative;
 }
 .footer-bottom{
-	padding-top: 20px;
-	background: #f93759;
+	padding-top: 40px;
+	padding-bottom: 20px;
 }
 .footer-contact .fa{
-	color: #f93759;
+	color: #c09f5a;
 	margin-right: 10px;
 }
 .newsletter .form-control{
 	padding: 9px 15px;
 	background: none;
-	border-color: #333;
-	color: #fff;
+	border-color: #c09f5a;
+	color: #000;
 }
 .newsletter .btn{
 	position: absolute;
-	top: 4px;
+	top: 3px;
 	right: 3px;
 }
 .footer-top .footer-social a{
@@ -695,3 +819,12 @@ img{
 .alignleft{}
 .aligncenter{}
 .sticky{}
+.animsition-loading {
+	border-top: 4px solid #c09f5a;
+	border-right: 4px solid #c09f5a;
+	border-bottom: 2px solid #c09f5a;
+	border-bottom: 2px solid #c09f5a;
+	border-left: 2px solid #c09f5a;
+	width: 45px;
+	height: 45px;
+}

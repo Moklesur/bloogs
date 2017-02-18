@@ -16,20 +16,25 @@
 	<section class="footer-top">
 		<div class="container">
 			<div class="row">
+				<!--------------- Footer Newsletter ---------------->
+				<div class="col-md-12 col-sm-12 col-xs-12 newsletter text-center">
+					<?php do_action('themetim_footer_newsletter'); ?>
+				</div>
+			</div>
+		</div>
+	</section>
+	<!--------------- Footer Middle ---------------->
+	<section class="footer-middle">
+		<div class="container">
+			<div class="row">
 				<?php
 				if(get_theme_mod('middle_footer_text_enable','1')) :
 					do_action('themetim_middle_footer_description');
 				endif;
 				if(get_theme_mod('middle_footer_nav_1_enable','1')) :
 					do_action('themetim_middle_footer_nav_1');
-				endif; ?>
-				<!--------------- Footer Newsletter ---------------->
-				<div class="col-md-5 col-sm-6 col-xs-12 newsletter">
-					<?php
-					do_action('themetim_footer_newsletter');
-					do_action('themetim_footer_social');
-					?>
-				</div>
+				endif;
+				do_action('themetim_footer_social'); ?>
 			</div>
 		</div>
 	</section>

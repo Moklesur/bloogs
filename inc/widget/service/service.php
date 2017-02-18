@@ -40,7 +40,7 @@ class bloogs_Service_Widget extends SiteOrigin_Widget {
 				'icon_color' => array(
 					'type' => 'color',
 					'label' => __( 'Icon Color', 'bloogs' ),
-					'default' => '#f93759'
+					'default' => '#c09f5a'
 				),
 				'title' => array(
 					'type'  => 'text',

@@ -21,14 +21,15 @@ get_header(); ?>
 							<?php
 							while ( have_posts() ) : the_post();
 								get_template_part( 'template-parts/content', get_post_format() );
+							?><div class="comments-wrap"><?php
 								previous_post_link('<span>%link</span>', '<i class="fa fa-long-arrow-left"></i> Previous', TRUE);
 								next_post_link('<span class="pull-right">%link</span>', 'Next <i class="fa fa-long-arrow-right"></i> ', TRUE);
-
+								?></div><div class="comments-wrap margin-top-40"><?php
 								// If comments are open or we have at least one comment, load up the comment template.
 								if ( comments_open() || get_comments_number() ) :
 									comments_template();
 								endif;
-
+								?></div><?php
 							endwhile; // End of the loop.
 							?>
 						</div>
