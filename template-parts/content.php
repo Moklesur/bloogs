@@ -81,7 +81,7 @@ if(is_single()){
 					</div>
 				<?php endif; ?>
 				<?php if (get_theme_mod('blog_social_sharing_enable', '1')) : ?>
-					<div class="pull-right margin-top-10">
+					<div class="pull-right margin-top-10 social-sharing-fix">
 						<?php themetim_social_sharing(); ?>
 					</div>
 				<?php endif; ?>

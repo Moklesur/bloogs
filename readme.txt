@@ -64,18 +64,6 @@ Bloogs includes support for Infinite Scroll in Jetpack.
   License : MIT
   Author : blivesta (http://blivesta.com/)
 
-* Camera slideshow
-  Camera slideshow v1.4.0 - a jQuery slideshow with many effects, transitions, easy to customize, using canvas and mobile ready, based on jQuery 1.9.1+
-  Copyright (c) 2012 by Manuel Masia - www.pixedelic.com
-  Licensed under the MIT license: http://www.opensource.org/licenses/mit-license.php
-
-* jQuery Mobile
-  jQuery Mobile v1.4.5
-  http://jquerymobile.com
-  Copyright 2010, 2014 jQuery Foundation, Inc. and other contributors
-  Released under the MIT license.
-  http://jquery.org/license
-
 * Mousewheel
   jQuery Mousewheel 3.1.13
   Copyright jQuery Foundation and other contributors

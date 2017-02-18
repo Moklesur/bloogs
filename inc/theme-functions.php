@@ -51,7 +51,7 @@ add_action( 'themetim_header_social', 'header_social' );
  */
 function footer_social() {
     if(get_theme_mod('social_footer_enable','1')) : ?>
-        <div class="footer-social col-md-3 col-sm-6 col-xs-12">
+        <div class="footer-social col-md-3 col-sm-12 col-xs-12">
             <ul class="list-inline margin-bottom-0 text-right">
                 <?php
                 if(get_theme_mod('footer_fb','1')) {
@@ -116,7 +116,7 @@ add_action( 'themetim_middle_footer_description', 'middle_footer_description' );
  */
 function middle_footer_nav_1(){
     ?>
-    <div class="col-md-7 col-sm-6 col-xs-12 footer-menu">
+    <div class="col-md-7 col-sm-10 col-xs-12 footer-menu">
         <?php
         if ( has_nav_menu( 'footer-1' ) ) :
             wp_nav_menu( array( 'theme_location' => 'footer-1', 'menu_class' => 'list-inline text-capitalize margin-bottom-0', 'menu_id' => 'primary-menu','container' => '' ) );
@@ -134,7 +134,7 @@ add_action( 'themetim_middle_footer_nav_1', 'middle_footer_nav_1' );
 function bottom_footer_copyright(){
     ?>
     <div class="col-md-12 col-sm-12 col-xs-12 site-info text-center">
-        <p><a href="https://wordpress.org"><?php echo get_theme_mod('bottom_footer_copyright','Proudly powered by WordPress'); ?></a><br/><a href="http://themetim.com">bloogs By ThemeTim</a></p>
+        <p><a href="https://wordpress.org"><?php echo get_theme_mod('bottom_footer_copyright','Proudly powered by WordPress'); ?></a><br/><a href="http://pandorapark.com">bloogs By PandoraPark</a></p>
     </div>
     <?php
 }

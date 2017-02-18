@@ -558,7 +558,7 @@ function bloogs_customize_register( $wp_customize ) {
 		'section'     => 'blog_settings',
 		'settings' => 'excerpt_lenght',
 		'label'       => __('Excerpt length', 'bloogs'),
-		'description' => __('Excerpt length Default: 60 words', 'bloogs'),
+		'description' => __('Excerpt length Default: 18 words', 'bloogs'),
 		'input_attrs' => array(
 			'min'   => 10,
 			'max'   => 200,
@@ -825,7 +825,7 @@ function bloogs_customize_register( $wp_customize ) {
 	$wp_customize->add_setting(
 		'btn_default_bg',
 		array(
-			'default'           => '#f93759',
+			'default'           => '#c09f5a',
 			'sanitize_callback' => 'sanitize_hex_color',
 		)
 	);
@@ -864,7 +864,7 @@ function bloogs_customize_register( $wp_customize ) {
 	$wp_customize->add_setting(
 		'btn_default_border',
 		array(
-			'default'           => '#f93759',
+			'default'           => '#c09f5a',
 			'sanitize_callback' => 'sanitize_hex_color',
 		)
 	);
@@ -1015,7 +1015,7 @@ function bloogs_customize_register( $wp_customize ) {
 	$wp_customize->add_setting(
 		'btn_primary_bg_hover',
 		array(
-			'default'           => '#f93759',
+			'default'           => '#c09f5a',
 			'sanitize_callback' => 'sanitize_hex_color',
 		)
 	);
@@ -1053,7 +1053,7 @@ function bloogs_customize_register( $wp_customize ) {
 	$wp_customize->add_setting(
 		'btn_primary_border_hover',
 		array(
-			'default'           => '#f93759',
+			'default'           => '#c09f5a',
 			'sanitize_callback' => 'sanitize_hex_color',
 		)
 	);
@@ -1146,7 +1146,7 @@ function bloogs_customize_register( $wp_customize ) {
 	$wp_customize->add_setting(
 		'btn_success_bg_hover',
 		array(
-			'default'           => '#f93759',
+			'default'           => '#c09f5a',
 			'sanitize_callback' => 'sanitize_hex_color',
 		)
 	);
@@ -1184,7 +1184,7 @@ function bloogs_customize_register( $wp_customize ) {
 	$wp_customize->add_setting(
 		'btn_success_border_hover',
 		array(
-			'default'           => '#f93759',
+			'default'           => '#c09f5a',
 			'sanitize_callback' => 'sanitize_hex_color',
 		)
 	);

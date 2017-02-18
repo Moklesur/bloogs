@@ -20,11 +20,18 @@
         padding: 2px 6px;
         margin-top: 7px;
     }
+    .widget-area section {
+        padding: 15px 20px;
+    }
 }
 /********************************************************
         ## Min Width 768px And Max Width 991px
 ********************************************************/
 @media (min-width: 768px) and (max-width: 991px){
+    .footer-social ul{
+        text-align: center;
+        margin-top: 10px;
+    }
     .primary-menu ul li a {
         padding: 15px 10px;
         font-size: 13px;
@@ -119,11 +126,39 @@
     .primary-menu ul li:first-child a {
         padding-left: 15px;
     }
+    .primary-menu .navbar-nav>li>a::after{
+        display: none;
+    }
+    .blog-slider #blog-slider{
+        padding: 50px;
+    }
+    .footer-social ul{
+        text-align: left;
+        margin-top: 20px;
+    }
+    .footer-menu{
+        margin-top: 10px;
+    }
+    .footer-menu li a {
+        padding: 5px 2px;
+    }
 }
 /********************************************************
         ## Max Width 480px
 ********************************************************/
 @media only screen and (max-width:480px) {
+    .blog-slider #blog-slider{
+        padding: 30px;
+    }
+    .social-sharing-fix{
+        float: left !important;
+    }
+    .article-post, .comments-wrap, .pagination-wrap .pagination {
+        padding: 20px;
+    }
+    .widget-area section{
+        padding: 15px 20px;
+    }
 }
 /********************************************************
         Max Width 320px
