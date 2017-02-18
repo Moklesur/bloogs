@@ -18,7 +18,7 @@ get_header(); ?>
 							<h2 class="page-title"><?php printf( esc_html__( 'Search Results for: %s', 'bloogs' ), '<span>' . get_search_query() . '</span>' ); ?></h2>
 						</header><!-- .page-header -->
 					</div>
-					<div class="col-md-9 col-sm-8 col-xs-12 padding-gap-1 padding-gap-4">
+					<div class="col-md-9 col-sm-12 col-xs-12 padding-gap-1 padding-gap-4">
 						<?php
 						if ( have_posts() ) : ?>
 							<?php
@@ -34,11 +34,14 @@ get_header(); ?>
 
 							endwhile;
 
-							if ( class_exists( 'WooCommerce' ) ) :
-								woocommerce_pagination();
-							else:
-								the_posts_navigation();
-							endif;
+							?><div class="pagination-wrap col-md-12 col-sm-12 col-xs-12"><?php
+							the_posts_pagination( array(
+								'screen_reader_text' => ' ',
+								'mid_size' => 5,
+								'prev_text' => __( '<i class="fa fa-angle-left"></i>', 'bloogs' ),
+								'next_text' => __( '<i class="fa fa-angle-right"></i>', 'bloogs' ),
+							) );
+							?></div><?php
 
 						else :
 
